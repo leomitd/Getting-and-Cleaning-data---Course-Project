@@ -56,6 +56,8 @@ These signals were used to estimate variables of the feature vector for each pat
 The aim of this analysis is to create a tidy data set which contains contains 
 the mean of both, mean() and std() -standard deviation- variables of the raws files, for each activity and each subject
 
+# Data transformation
+
 ### Downloading the data and selecting right features
 
 Downloading and unzipping the files onto the local computer
