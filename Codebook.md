@@ -51,6 +51,11 @@ These signals were used to estimate variables of the feature vector for each pat
 
 # Steps undertaken by the analysis script
 
+## Aim
+
+The aim of this analysis is to create a tidy data set which contains contains 
+the mean of both, mean() and std() -standard deviation- variables of the raws files, for each activity and each subject
+
 ### Downloading the data and selecting right features
 
 Downloading and unzipping the files onto the local computer
@@ -137,4 +142,42 @@ TestDataSet <- cbind(dataSubTest,datayTest,dataXTest)
 ##Remove Test temporary variable from the memory
 remove(dataSubTest,dataXTest,datayTest)
 ```
+
+Creating data set that combines both Test and Train data
+```
+finalDataSet <- rbind(TrainDataSet,TestDataSet)
+```
+
+Labeling the columns of the dataset
+```
+colnames(finalDataSet) <- c("Subject","Act",meanStdFeat)
+```
+
+In order to combine all data provided, we decided to merge the dataset containing all the measurement with the one containing the activities labels.
+```
+mergedData <- merge(finalDataSet, dataActLabel, by.x = "Act", by.y ="V1")
+#Change the name of the merged column from V2 to "Activity_Name"
+names(mergedData)[names(mergedData) == "V2"] <- "Activity_Name"
+```
+
+### Create final tidy data set containing the mean of all variables
+```
+finalTidySet <- ddply(mergedData, .(Subject, Activity_Name),  numcolwise(mean))
+
+#Rename correctly the columns
+colnames(finalTidySet)[4:82] <- paste("Mean_of",colnames(finalTidySet)[4:82], sep="_")
+```
+
+We then create the file containing the clean data set
+```
+write.table(finalTidySet, file="FinalTidySet_CourseProject.txt", sep=",")
+```
+
+# Output
+
+The script will create a file called *FinalTidySet_CourseProject.txt* which is a comma separated file
+
+Also the script will read print out the first 6 lines of the produced file in order to display the results
+
+
 
