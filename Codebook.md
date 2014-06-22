@@ -153,7 +153,7 @@ names(mergedData)[names(mergedData) == "V2"] <- "Activity_Name"
 ```
 
 ### Create final tidy data set containing the mean of all variables
-We have added "Mean_of_" in front of each variable names to give them more descriptive aspect
+We have added "Mean_of_" in front of each variable names to give them a more descriptive aspect
 ```
 finalTidySet <- ddply(mergedData, .(Subject, Activity_Name),  numcolwise(mean))
 
