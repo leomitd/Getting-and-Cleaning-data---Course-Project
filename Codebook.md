@@ -51,7 +51,7 @@ These signals were used to estimate variables of the feature vector for each pat
 
 # Steps undertaken by the analysis script
 
-## Aim
+## Goal
 
 The aim of this analysis is to create a tidy data set which contains contains 
 the mean of both, mean() and std() -standard deviation- variables of the raws files, for each activity and each subject
@@ -61,10 +61,8 @@ the mean of both, mean() and std() -standard deviation- variables of the raws fi
 Downloading and unzipping the files onto the local computer
 
 ```
-#Get the file URL
 fileURL1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
-#Download the data file and unzip the file
 download.file(fileURL1, destfile = "UCI_HAR_Dataset.zip", method = "curl")
 unzip("UCI_HAR_Dataset.zip")
 ```
@@ -125,9 +123,6 @@ dataXTrain <- dataXTrain[,indexMeanStd]
 ##Create one train data set
 TrainDataSet <- cbind(dataSubTrain,datayTraing,dataXTrain)
 
-##Remove Train temporary variable from the memory
-remove(dataSubTrain,dataXTrain,datayTraing)
-
 ##Subject and y Test data
 dataSubTest <-  read.table(subject_test)
 datayTest <- read.table(y_test)
@@ -138,9 +133,6 @@ dataXTest <- dataXTest[,indexMeanStd]
 
 ##Create one Test data set
 TestDataSet <- cbind(dataSubTest,datayTest,dataXTest)
-
-##Remove Test temporary variable from the memory
-remove(dataSubTest,dataXTest,datayTest)
 ```
 
 Creating data set that combines both Test and Train data
@@ -178,6 +170,8 @@ write.table(finalTidySet, file="FinalTidySet_CourseProject.txt", sep=",")
 The script will create a file called *FinalTidySet_CourseProject.txt* which is a comma separated file
 
 Also the script will read print out the first 6 lines of the produced file in order to display the results
+
+
 
 
 
