@@ -169,7 +169,18 @@ write.table(finalTidySet, file="FinalTidySet_CourseProject.txt", sep=",")
 
 The script will create a file called *FinalTidySet_CourseProject.txt* which is a comma separated file
 
-Also the script will read print out the first 6 lines of the produced file in order to display the results
+Also the script will read print out the first 7 colmumns of the first 6 lines of the produced file in order to display the results
+
+```
+> head(readFinalTidySet[,1:7])
+  Subject      Activity_Name Act Mean_of_tBodyAcc_mean_X Mean_of_tBodyAcc_mean_Y Mean_of_tBodyAcc_mean_Z Mean_of_tBodyAcc_std_X
+1       1             LAYING   6               0.2215982            -0.040513953              -0.1132036            -0.92805647
+2       1            SITTING   4               0.2612376            -0.001308288              -0.1045442            -0.97722901
+3       1           STANDING   5               0.2789176            -0.016137590              -0.1106018            -0.99575990
+4       1            WALKING   1               0.2773308            -0.017383819              -0.1111481            -0.28374026
+5       1 WALKING_DOWNSTAIRS   3               0.2891883            -0.009918505              -0.1075662             0.03003534
+6       1   WALKING_UPSTAIRS   2               0.2554617            -0.023953149              -0.0973020            -0.35470803
+```
 
 
 
