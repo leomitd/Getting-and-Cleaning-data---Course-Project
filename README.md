@@ -29,4 +29,4 @@ The description of the original data can be found here :
 ## Output
 
 **The script will execute all the necessary steps to conduct the data analysis and will produce a cleaned data set called** *FinalTidySet_CourseProject.txt*
-**which contains the mean of both, mean and standard deviation variable of the raws files, for each activity and each subject
+**which contains the mean of both, mean and standard deviation variable of the raws files, for each activity and each subject**
