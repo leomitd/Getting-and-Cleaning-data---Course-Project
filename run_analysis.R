@@ -117,4 +117,4 @@ write.table(finalTidySet, file="FinalTidySet_CourseProject.txt", sep=",")
 readFinalTidySet <- read.table("FinalTidySet_CourseProject.txt", header = T, sep=",")
 
 #Display the head
-head(readFinalTidySet)
+head(readFinalTidySet[,1:7])
