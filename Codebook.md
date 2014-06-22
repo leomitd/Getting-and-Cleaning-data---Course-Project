@@ -62,7 +62,7 @@ fileURL1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%
 #Download the data file and unzip the file
 download.file(fileURL1, destfile = "UCI_HAR_Dataset.zip", method = "curl")
 unzip("UCI_HAR_Dataset.zip")
-``
+```
 
 The files are unzipped in the *UCI HAR Dataset/* directory
 We then create the different local variables containing the paths to the different files (mentioned in the section **Original data** above).
