@@ -5,8 +5,6 @@ This repository contains the files necessary to conduct an data analysis for the
 The project consists of getting and cleaning the data from the UCI Machine Learning Repository. 
 The data set contains records of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
-
-
 It contains 3 files : 
 
 * Codebook.md, which describes the variables, the data, and all transformations that have been performed to clean the data
